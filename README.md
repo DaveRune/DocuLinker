@@ -1,6 +1,6 @@
 # Readme Linker
 
-A lightweight Unity Editor addon for linking to documentation from the Project window.  
+A lightweight Unity Editor addon for linking to documentation from within the Project window.  
 Link to either a local Markdown file or a url to an external source.
 
 When configured, a clickable icon appears next to the folder in the Project window.
@@ -27,15 +27,17 @@ Readme Linker will detect this automatically and display a **?** icon next to `Y
 
 ### 2. External Link
 
-Create a `Readme~` folder anywhere inside your project and place a `link.url` file inside it containing the URL.
+Create a `Readme~` folder anywhere inside your project and place a `link.txt` file inside it containing just the URL.
 
 ```
 YourFolder/
 └── Readme~/
-    └── link.url
+    └── link.txt
 ```
 
 Readme Linker will detect this automatically and display a **↗** icon next to `YourFolder`. Clicking it will open the URL in your default browser.
+
+> The `.txt` file is used for simplicity across Linux, Mac and Windows.
 
 ---
 
