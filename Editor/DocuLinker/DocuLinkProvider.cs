@@ -1,15 +1,15 @@
 using System.Collections.Generic;
 using System.IO;
-using KnightForge.ReadmeLinker.DocuLinkTypes;
+using KnightForge.DocuLinker.DocuLinkTypes;
 using UnityEngine;
 
-namespace KnightForge.ReadmeLinker
+namespace KnightForge.DocuLinker
 {
-    internal static class DocLinkProvider
+    internal static class DocuLinkProvider
     {
-        private static readonly Dictionary<string, List<DocLink>> Cache = new();
+        private static readonly Dictionary<string, List<DocuLink>> Cache = new();
 
-        public static List<DocLink> GetDocLinks(string assetPath)
+        public static List<DocuLink> GetDocLinks(string assetPath)
         {
             if (Cache.TryGetValue(assetPath, out var cached))
                 return cached;
@@ -21,10 +21,10 @@ namespace KnightForge.ReadmeLinker
 
         public static void ClearCache() => Cache.Clear();
 
-        private static List<DocLink> Resolve(string assetPath)
+        private static List<DocuLink> Resolve(string assetPath)
         {
             var fullPath = Path.GetFullPath(assetPath);
-            var links = new List<DocLink>();
+            var links = new List<DocuLink>();
 
             if (!Directory.Exists(fullPath))
                 return links;
@@ -38,12 +38,12 @@ namespace KnightForge.ReadmeLinker
             {
                 var url = File.ReadAllText(linkFile).Trim();
                 if (!string.IsNullOrEmpty(url))
-                    links.Add(new ExternalDocLink(url));
+                    links.Add(new ExternalDocuLink(url));
             }
 
             var readmeFile = FindFile(readmeDir, "README.md");
             if (readmeFile != null)
-                links.Add(new ReadmeDocLink(readmeFile));
+                links.Add(new ReadmeDocuLink(readmeFile));
 
             return links;
         }

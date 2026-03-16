@@ -1,8 +1,8 @@
 {
-  "name": "com.knightforge.readmelinker",
+  "name": "com.knightforge.doculinker",
   "version": "0.1.0",
-  "displayName": "Readme Linker",
-  "description": "Lightweight documentation and links in the Unity Editor",
+  "displayName": "DocuLinker",
+  "description": "Lightweight links to documentation the Unity Editor",
   "unity": "2022.3",
   "unityRelease": "0f1",
   "keywords": [
@@ -11,9 +11,9 @@
     "upm",
     "knightforge",
     "utility",
-    "readme",
+    "document",
     "linker",
-    "readmelinker"
+    "doculinker"
   ],
   "author": {
     "name": "Knight Forge",

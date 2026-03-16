@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using KnightForge.ReadmeLinker.DocuLinkTypes;
+using KnightForge.DocuLinker.DocuLinkTypes;
 using UnityEditor;
 using UnityEngine;
 
-namespace KnightForge.ReadmeLinker
+namespace KnightForge.DocuLinker
 {
     internal static class ProjectWindowItemDrawer
     {
@@ -34,7 +34,7 @@ namespace KnightForge.ReadmeLinker
             if (string.IsNullOrEmpty(assetPath))
                 return;
 
-            var links = DocLinkProvider.GetDocLinks(assetPath);
+            var links = DocuLinkProvider.GetDocLinks(assetPath);
             if (links.Count == 0)
                 return;
 
@@ -96,7 +96,7 @@ namespace KnightForge.ReadmeLinker
             GUI.DrawTexture(gradientRect, GetGradientTexture());
         }
 
-        private static void DrawIcons(List<DocLink> links, Rect[] iconRects, bool isRowHovered)
+        private static void DrawIcons(List<DocuLink> links, Rect[] iconRects, bool isRowHovered)
         {
             for (var i = 0; i < links.Count; i++)
             {
@@ -107,7 +107,7 @@ namespace KnightForge.ReadmeLinker
             }
         }
 
-        private static void HandleClick(string guid, List<DocLink> links, Rect[] iconRects)
+        private static void HandleClick(string guid, List<DocuLink> links, Rect[] iconRects)
         {
             if (Event.current.type != EventType.MouseDown || Event.current.button != 0)
                 return;

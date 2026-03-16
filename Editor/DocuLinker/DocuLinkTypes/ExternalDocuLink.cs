@@ -1,10 +1,10 @@
-﻿namespace KnightForge.ReadmeLinker.DocuLinkTypes
+﻿namespace KnightForge.DocuLinker.DocuLinkTypes
 {
-    internal sealed class ExternalDocLink : DocLink
+    internal sealed class ExternalDocuLink : DocuLink
     {
         private readonly string _url;
 
-        public ExternalDocLink(string url) => _url = url;
+        public ExternalDocuLink(string url) => _url = url;
 
         public override string Icon => "↗";
         public override void Open() => EditorLauncher.OpenUrl(_url);

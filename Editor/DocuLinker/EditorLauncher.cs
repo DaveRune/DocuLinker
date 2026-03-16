@@ -2,7 +2,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace KnightForge.ReadmeLinker
+namespace KnightForge.DocuLinker
 {
     internal static class EditorLauncher
     {

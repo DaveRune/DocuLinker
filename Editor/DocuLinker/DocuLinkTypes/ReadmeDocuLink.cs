@@ -1,10 +1,10 @@
-﻿namespace KnightForge.ReadmeLinker.DocuLinkTypes
+﻿namespace KnightForge.DocuLinker.DocuLinkTypes
 {
-    internal sealed class ReadmeDocLink : DocLink
+    internal sealed class ReadmeDocuLink : DocuLink
     {
         private readonly string _filePath;
 
-        public ReadmeDocLink(string filePath) => _filePath = filePath;
+        public ReadmeDocuLink(string filePath) => _filePath = filePath;
 
         public override string Icon => "?";
         public override void Open() => EditorLauncher.OpenFile(_filePath);

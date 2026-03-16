@@ -1,14 +1,15 @@
+using KnightForge.DocuLinker;
 using UnityEditor;
 using UnityEngine;
 
-namespace KnightForge.ReadmeLinker
+namespace KnightForge.DocuLinker
 {
     [InitializeOnLoad]
-    internal static class ReadmeLinkerInitializer
+    internal static class DocuLinkerInitializer
     {
         private static EditorWindow _lastProjectWindow;
 
-        static ReadmeLinkerInitializer()
+        static DocuLinkerInitializer()
         {
             EditorApplication.projectWindowItemOnGUI += OnProjectWindowItemGUI;
             EditorApplication.projectChanged += OnProjectChanged;
@@ -22,7 +23,7 @@ namespace KnightForge.ReadmeLinker
 
         private static void OnProjectChanged()
         {
-            DocLinkProvider.ClearCache();
+            DocuLinkProvider.ClearCache();
             ProjectWindowItemDrawer.ClearHover();
         }
 

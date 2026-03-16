@@ -1,5 +1,5 @@
 {
-    "name": "KnightForge.ReadmeLinker.Editor",
+    "name": "KnightForge.DocuLinker.Editor",
     "rootNamespace": "KnightForge",
     "references": [],
     "includePlatforms": [
