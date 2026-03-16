@@ -5,6 +5,8 @@ Link to either a local Markdown file or a url to an external source.
 
 When configured, a clickable icon appears next to the folder in the Project window.
 
+![Editor\ExampleImage~\ExampleImage.png](https://github.com/DaveRune/DocuLinker/blob/main/Editor/ExampleImage~/ExampleImage.png)
+
 ---
 ### Install Package from Git URL: **https://github.com/DaveRune/DocuLinker.git**
 ---
