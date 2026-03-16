@@ -1,4 +1,4 @@
-# Readme Linker
+# DocuLinker
 
 A lightweight Unity Editor addon for linking to documentation from within the Project window.  
 Link to either a local Markdown file or a url to an external source.
