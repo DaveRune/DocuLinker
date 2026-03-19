@@ -61,7 +61,7 @@ namespace KnightForge.DocuLinker
             }
             catch (System.Exception e)
             {
-                Debug.LogWarning($"ReadmeLinker: Could not search directory '{parentPath}'. {e.Message}");
+                Debug.LogWarning($"{DocuLinkerConstants.ProductName}: Could not search directory '{parentPath}'. {e.Message}");
             }
 
             return null;
@@ -80,7 +80,7 @@ namespace KnightForge.DocuLinker
             }
             catch (System.Exception e)
             {
-                Debug.LogWarning($"ReadmeLinker: Could not search directory '{directoryPath}'. {e.Message}");
+                Debug.LogWarning($"{DocuLinkerConstants.ProductName}: Could not search directory '{directoryPath}'. {e.Message}");
             }
 
             return null;

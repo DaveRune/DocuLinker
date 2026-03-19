@@ -13,22 +13,22 @@ namespace KnightForge.DocuLinker
         private const string LinkDefaultContent = "www.your-url-goes-here.com/example";
         private const string ReadmeDefaultContent = "Create your documentation here.\n\nThe Documentation is associated with the containing folder \"{0}\"";
 
-        [MenuItem("Assets/Create/DocuLinker/Local Readme", priority = 200)]
+        [MenuItem("Assets/Create/" + DocuLinkerConstants.ProductName + "/Local Readme", priority = 200)]
         private static void CreateLocalReadme()
         {
             CreateDocuLinkFile(ReadmeFileName, "Documentation");
         }
 
-        [MenuItem("Assets/Create/DocuLinker/Local Readme", validate = true)]
+        [MenuItem("Assets/Create/" + DocuLinkerConstants.ProductName + "/Local Readme", validate = true)]
         private static bool ValidateCreateLocalReadme() => Selection.activeObject != null;
 
-        [MenuItem("Assets/Create/DocuLinker/External Link", priority = 201)]
+        [MenuItem("Assets/Create/" + DocuLinkerConstants.ProductName + "/External Link", priority = 201)]
         private static void CreateExternalLink()
         {
             CreateDocuLinkFile(LinkFileName, "Link");
         }
 
-        [MenuItem("Assets/Create/DocuLinker/External Link", validate = true)]
+        [MenuItem("Assets/Create/" + DocuLinkerConstants.ProductName + "/External Link", validate = true)]
         private static bool ValidateCreateExternalLink() => Selection.activeObject != null;
 
         private static void CreateDocuLinkFile(string fileName, string label)
@@ -36,7 +36,7 @@ namespace KnightForge.DocuLinker
             var result = GetSelectedFolderPaths();
             if (result == null)
             {
-                Debug.LogWarning("DocuLinker: Could not resolve a target folder from the current selection.");
+                Debug.LogWarning($"{DocuLinkerConstants.ProductName}: Could not resolve a target folder from the current selection.");
                 return;
             }
 
@@ -46,7 +46,7 @@ namespace KnightForge.DocuLinker
 
             if (File.Exists(filePath))
             {
-                Debug.Log($"DocuLinker: {label} already exists at '{assetFolderPath}'.");
+                Debug.Log($"{DocuLinkerConstants.ProductName}: {label} already exists at '{assetFolderPath}'.");
                 EditorLauncher.OpenFile(filePath);
                 return;
             }
