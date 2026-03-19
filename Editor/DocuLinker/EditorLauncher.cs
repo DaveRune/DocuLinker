@@ -8,6 +8,7 @@ namespace KnightForge.DocuLinker
     {
         public static void OpenFile(string filePath)
         {
+            // "kScriptsDefaultApp" is an undocumented internal Unity EditorPrefs key for the preferred code editor path.
             var editorPath = EditorPrefs.GetString("kScriptsDefaultApp");
 
             if (!string.IsNullOrEmpty(editorPath) && File.Exists(editorPath))
