@@ -1,6 +1,6 @@
 {
   "name": "com.knightforge.doculinker",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "displayName": "DocuLinker",
   "description": "Lightweight links to documentation the Unity Editor",
   "unity": "2022.3",
