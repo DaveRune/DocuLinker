@@ -6,16 +6,13 @@ namespace KnightForge.DocuLinker
 {
     internal static class CreateDocuLinkMenuItems
     {
-        private const string ReadmeDirName = "Readme~";
-        private const string ReadmeFileName = "README.md";
-        private const string LinkFileName = "link.txt";
         private const string LinkDefaultContent = "www.your-url-goes-here.com/example";
         private const string ReadmeDefaultContent = "Create your documentation here.\n\nThe Documentation is associated with the containing folder \"{0}\"";
 
         [MenuItem("Assets/Create/" + DocuLinkerConstants.ProductName + "/Local Readme", priority = 200)]
         private static void CreateLocalReadme()
         {
-            CreateDocuLinkFile(ReadmeFileName, "Documentation");
+            CreateDocuLinkFile(DocuLinkerConstants.ReadmeFileName, "Documentation");
         }
 
         [MenuItem("Assets/Create/" + DocuLinkerConstants.ProductName + "/Local Readme", validate = true)]
@@ -24,7 +21,7 @@ namespace KnightForge.DocuLinker
         [MenuItem("Assets/Create/" + DocuLinkerConstants.ProductName + "/External Link", priority = 201)]
         private static void CreateExternalLink()
         {
-            CreateDocuLinkFile(LinkFileName, "Link");
+            CreateDocuLinkFile(DocuLinkerConstants.LinkFileName, "Link");
         }
 
         [MenuItem("Assets/Create/" + DocuLinkerConstants.ProductName + "/External Link", validate = true)]
@@ -40,7 +37,7 @@ namespace KnightForge.DocuLinker
             }
 
             var (fullPath, assetFolderPath) = result.Value;
-            var readmeDir = Path.Combine(fullPath, ReadmeDirName);
+            var readmeDir = Path.Combine(fullPath, DocuLinkerConstants.ReadmeDirName);
             var filePath = Path.Combine(readmeDir, fileName);
 
             if (File.Exists(filePath))
@@ -63,7 +60,7 @@ namespace KnightForge.DocuLinker
 
         private static string BuildDefaultContent(string fileName, string assetFolderPath)
         {
-            if (fileName != ReadmeFileName)
+            if (fileName != DocuLinkerConstants.ReadmeFileName)
                 return LinkDefaultContent;
             
             var folderName = Path.GetFileName(assetFolderPath);

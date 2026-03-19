@@ -29,11 +29,11 @@ namespace KnightForge.DocuLinker
             if (!Directory.Exists(fullPath))
                 return links;
 
-            var readmeDir = FindDirectory(fullPath, "Readme~");
+            var readmeDir = FindDirectory(fullPath, DocuLinkerConstants.ReadmeDirName);
             if (readmeDir == null)
                 return links;
 
-            var linkFile = FindFile(readmeDir, "link.txt");
+            var linkFile = FindFile(readmeDir, DocuLinkerConstants.LinkFileName);
             if (linkFile != null)
             {
                 var url = File.ReadAllText(linkFile).Trim();
@@ -41,7 +41,7 @@ namespace KnightForge.DocuLinker
                     links.Add(new ExternalDocuLink(url));
             }
 
-            var readmeFile = FindFile(readmeDir, "README.md");
+            var readmeFile = FindFile(readmeDir, DocuLinkerConstants.ReadmeFileName);
             if (readmeFile != null)
                 links.Add(new ReadmeDocuLink(readmeFile));
 
